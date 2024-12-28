@@ -54,7 +54,7 @@ def base_list() -> pl.DataFrame:
 
 
 def case_list() -> tuple[pl.DataFrame, pl.DataFrame]:
-    "Returns two polars dataframe objects. 1st contains trail summaries, and the second contains the associated charges."
+    "Returns two polars dataframe objects. The first contains trail summaries, the second contains associated charges."
 
     response = httpx.get('https://legalassistance.law.af.mil/AMJAMS/PublicDocket/caseList.1.7.xml')
     element = ET.ElementTree(DET.fromstring(response.text)).getroot().find('trialResults')
